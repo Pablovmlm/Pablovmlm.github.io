@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/spinner.css">
+</head>
+
+<body>
+    <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        window.onload = function() {
+            const redirectUrl = sessionStorage.getItem("redirectAfterSpinner");
+            if (redirectUrl) {
+                setTimeout(() => {
+                    sessionStorage.removeItem("redirectAfterSpinner"); // Limpia el dato
+                    window.location.href = redirectUrl;
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+
+</html>

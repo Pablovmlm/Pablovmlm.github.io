@@ -1,0 +1,18 @@
+@use "_variables" as *;
+//Clase de los botones para pedir cita
+.black__button {
+    font-family: $fuente-principal;
+    cursor: pointer;
+    text-decoration: none;
+    color: $color-primario;
+    background-color: $color-secundario;
+    padding: 0.5em 1em;
+    border: 1px solid $color-primario;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: $color-primario;
+        border: 1px solid $color-secundario;
+        color: $color-secundario;
+    }
+}

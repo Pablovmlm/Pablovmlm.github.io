@@ -1,0 +1,27 @@
+//Estilos del footer
+.footer{
+    width: 100%;
+    background-color: #0f0f0f;
+    color: #fff;
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .footer__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 3em;
+        p {
+            margin-right: 1em;
+        }
+    }
+    .footer__logo {
+        cursor: pointer;
+        margin-left: 1em;
+        img {
+            width: 3em;
+            height: 3em;
+        }
+    }
+}

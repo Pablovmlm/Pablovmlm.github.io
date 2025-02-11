@@ -1,0 +1,97 @@
+@use "_fuente" as *;
+@use "_variables" as *;
+@use "_botones-cita" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: $fuente-principal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+//Banner de Pide cita ahora
+.banner {
+    width: 100%;
+    background-color: white;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    h1 {
+        color: black;
+        text-transform: uppercase;
+        font-size: 3em;
+        text-align: center;
+    }
+}
+
+//Clase del grid que contiene las cards de los lugares
+.locations {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    background-color: black;
+    gap: $grid-gap;
+    padding: $global-padding;
+    .locations__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1;
+        margin: 1em;
+        padding: 1em;
+        border: 1px solid white;
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0px 0px 10px 2px white;
+        img {
+            width: 100%;
+            height: 30rem;
+            object-fit: cover;
+        }
+        h2 {
+            margin: 1em 0;
+            text-transform: uppercase;
+            font-size: 1.5em;
+        }
+        p {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    }
+}
+//Clase del grid con las cards de las imágenes
+.designs {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    background-color: black;
+    gap: $grid-gap;
+    padding: $global-padding;
+    .designs__card {
+        margin: 1em;
+        padding: 1em;
+        border: 1px solid white;
+        border-radius: 10px;
+        aspect-ratio: 1;
+        color: white;
+        box-shadow: 0px 0px 10px 2px white;
+        transition: all 0.3s ease;
+        &:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

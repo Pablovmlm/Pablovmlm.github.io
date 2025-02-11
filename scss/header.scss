@@ -1,0 +1,74 @@
+@use "_botones-cita";
+@use "_fuente";
+@use "_variables" as *;
+body {
+    font-family: $fuente-principal;
+}
+//Estilos del header
+header {
+    background-color: #0f0f0f;
+    color: #fff;
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+        cursor: pointer;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        animation: move 2s ease forwards;
+        img {
+            width: 6em;
+            height: 6em;
+        }
+    }
+    h2 {
+        visibility: hidden;
+        animation: move 2s ease forwards 1s;
+    }
+}
+//Estilos del menú de navegación
+nav {
+    display: flex;
+    visibility: hidden;
+    animation: move 2s ease forwards 2s;
+    margin-bottom: 0;
+    ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        li {
+            margin: 0 1em;
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
+}
+.list__bar {
+    height: 3rem;
+    width: 0.1%;
+    background-color: white;
+}
+
+//Animación de entrada
+@keyframes move {
+    0% {
+        transform: translateX(100vw);
+        visibility: visible;
+    }
+    50% {
+        transform: translateX(0);
+        visibility: visible;
+    }
+    75% {
+        transform: scale(1.2);
+        visibility: visible;
+    }
+    100% {
+        transform: scale(1);
+        visibility: visible;
+    }
+}
