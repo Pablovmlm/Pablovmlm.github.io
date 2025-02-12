@@ -76,7 +76,7 @@ body {
   height: 30rem;
   object-fit: cover;
 }
-.locations .locations__card h3 {
+.locations .locations__card h2 {
   margin: 1em 0;
   text-transform: uppercase;
   font-size: 1.5em;
