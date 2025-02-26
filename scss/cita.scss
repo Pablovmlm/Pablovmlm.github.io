@@ -1,0 +1,79 @@
+@use "_variables" as *;
+@use "_botones-cita" as *;
+@use "_hamburguesa" as *;
+@use "_mixins" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow-x: hidden;
+    font-family: $fuente-secundaria;
+}
+
+h1 {
+    font-family: $fuente-principal;
+}
+
+main > h1 {
+    color: $color-primario;
+    text-transform: uppercase;
+    font-size: 3em;
+    text-align: center;
+}
+
+main {
+    @include flex-center;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    margin-top: 3%;
+}
+
+.cita__container {
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3%;
+    padding-bottom: 2%;
+}
+
+.cita {
+    width: 20%;
+    margin: 0 auto;
+    @include flex-center;
+    flex-direction: column;
+    background-color: $color-primario;
+    color: $color-secundario;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 1em 0;
+    span {
+        color: red;
+    }
+    input {
+        width: 70%;
+        margin: 0.5em 0;
+    }
+}
+
+// Media queries para 992px y 576px
+@include responsive(992px, 1, 1, 2.5em);
+@media (max-width: 992px) {
+    .cita {
+        width: 40%;
+    }
+}
+
+@include responsive(576px, 1, 1, 2em);
+@media (max-width: 576px) {
+    .cita {
+        width: 70%;
+    }
+}

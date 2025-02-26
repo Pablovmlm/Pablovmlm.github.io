@@ -1,27 +1,60 @@
+@use "_variables" as *;
+@use "_mixins" as *;
+
 //Estilos del footer
-.footer{
+.footer {
     width: 100%;
     background-color: #0f0f0f;
     color: #fff;
     padding: 1em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
+    flex-wrap: wrap;
+    text-align: center;
     .footer__text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 3em;
+        @include flex-center;
+        flex-wrap: wrap; 
+        margin: 0 1em;
         p {
-            margin-right: 1em;
+            margin: 0.5em 1em;
         }
     }
+
     .footer__logo {
-        cursor: pointer;
+        @include flex-center;
         margin-left: 1em;
         img {
             width: 3em;
             height: 3em;
+            margin: 0.5em;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .footer {
+        flex-direction: column;
+        padding: 2em 1em; 
+        .footer__text {
+            flex-direction: column; 
+            margin-bottom: 1em;
+        }
+        .footer__logo {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 2em 1em;
+        .footer__text {
+            flex-direction: column;
+            margin-bottom: 1em;
+        }
+        .footer__logo {
+            flex-wrap: wrap;
+            justify-content: center;
         }
     }
 }

@@ -4,64 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dragon Studio</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <script src="script/loader.js" defer></script>
+    <script src="script/menu.js" defer></script>
+    <script src="js/scriptJS.js" defer></script>
+    <script src="script/cita.js" defer></script>
 </head>
-
+<!-- Primera mejora: hacer que el formulario de citas funcione para que no puedas pedir dos citas a la misma hora el mismo día, o pedir citas en días pasados
+     Segunda mejora: agregar una ventana de diseños con un buscador para que puedas buscar según el estilo de tatuaje que prefieras y ver diseños parecidos -->
 <body>
     <header>
         <div class="logo">
-            <img src="img/logo/dragon.jpg" alt="imagen de dragon">
+            <a href="index.html"><img src="img/logo/dragon.png" alt="imagen de dragon"></a>
         </div>
         <h2>Dragon Studio</h2>
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Estudios</a></li>
-                <li><a href="#">Artistas</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
+            <ul class="nav__links">
+                <li><a class="lang" key="estudios" href="estudios.html">Estudios</a></li>
+                <li><a class="lang" key="artistas" href="artistas.html">Artistas</a></li>
+                <li><a class="lang" key="nosotros" href="nosotros.html">Nosotros</a></li>
                 <li class="list__bar"></li>
-                <li><a href="#">Iniciar Sesión</a></li>
-                <li><a href="registro.html">Registrarse</a></li>
+                <li><a class="lang" key="iniciar" href="sesion.html">Iniciar Sesión</a></li>
+                <li><a class="lang" key="registrarse" href="registro.html">Registrarse</a></li>
+                <li class="list__bar"></li>
+                <li><button class="translate" id="es">Español</button></li>
+                <li><button class="translate" id="en">English</button></li>
             </ul>
-            <button class="black__button">Pedir Cita</button>
+            <button class="black__button cita-button lang" key="pedir">Pedir Cita</button>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
     <main>
         <section class="banner">
-            <h1>¡Pide cita ahora!</h1>
+            <h1 class="lang" key="cita">¡Pide cita ahora!</h1>
         </section>
         <section class="locations">
             <div class="locations__card">
                 <img src="img/estudios/tattoo_studio4.png" alt="tatuaje1">
                 <h2>Madrid</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                <a class="black__button" href="#">Pedir cita</a>
+                <a class="black__button lang cita-button" key="pedir" href="#">Pedir cita</a>
             </div>
             <div class="locations__card">
                 <img src="img/estudios/tattoo_studio3.png" alt="tatuaje2">
                 <h2>Barcelona</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                <a class="black__button" href="#">Pedir cita</a>
+                <a class="black__button lang cita-button" key="pedir" href="#">Pedir cita</a>
             </div>
             <div class="locations__card">
                 <img src="img/estudios/tattoo_studio.png" alt="tatuaje3">
                 <h2>Ciudad Real</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                <a class="black__button" href="#">Pedir cita</a>
+                <a class="black__button lang cita-button" key="pedir" href="#">Pedir cita</a>
             </div>
             <div class="locations__card">
                 <img src="img/estudios/tattoo_studio2.png" alt="tatuaje3">
                 <h2>Zaragoza</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-                <a class="black__button" href="#">Pedir cita</a>
+                <a class="black__button lang cita-button" key="pedir" href="#">Pedir cita</a>
             </div>
         </section>
         <section class="banner">
-            <h1>Diseños</h1>
+            <h1 class="lang" key="disenios">Diseños</h1>
         </section>
         <section class="designs">
             <div class="designs__card">
@@ -99,8 +110,8 @@
     <footer class="footer">
         <div class="footer__text">
             <p>© Dragon Studio 2025</p>
-            <p>Política de Privacidad</p>
-            <p>Política de Cookies</p>
+            <p class="lang" key="privacy">Política de Privacidad</p>
+            <p class="lang" key="cookies">Política de Cookies</p>
         </div>
         <div class="footer__logo">
             <a href="#"><img src="img/footer/instagram_logo.png" alt="red social 1"></a>
@@ -118,6 +129,7 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+    <script src="script/scriptJS.js"></script>
 </body>
 
 </html>

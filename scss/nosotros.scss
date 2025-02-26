@@ -1,65 +1,47 @@
+@use "_variables" as *;
+@use "_botones-cita" as *;
+@use "_hamburguesa" as *;
+@use "_mixins" as *;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
     overflow-x: hidden;
 }
-//Clase de los botones para pedir cita
-.black__button {
-    cursor: pointer;
-    text-decoration: none;
-    color: #0f0f0f;
-    background-color: #fff;
-    padding: 0.5em 1em;
-    border: 1px solid #0f0f0f;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    &:hover {
-        background-color: #0f0f0f;
-        border: 1px solid #fff;
-        color: #fff;
-    }
-}
+
 main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    h1{
+    h1 {
         color: black;
         text-transform: uppercase;
         font-size: 3em;
         text-align: center;
+        font-family: $fuente-principal;
     }
     .nosotros {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(200px, 1fr));
-        grid-gap: 1em;
+        @include grid-center(4);
         margin: 1em;
         .nosotros__card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include card-style(black, black);
             padding: 1em;
-            border: 1px solid black;
-            border-radius: 10px;
-            p {
-                text-align: center;
-                font-size: x-large;
+            img {
+                width: 100%;
+                height: auto;
             }
-        }
-        img {
-            width: 100%;
-            height: 100%;
         }
     }
 }
+
 @keyframes cardAnimation {
     0% {
         transform: scale(1);
@@ -75,12 +57,42 @@ main {
 .nosotros__card:nth-of-type(1) {
     animation: cardAnimation 1s ease forwards;
 }
-.nosotros__card:nth-of-type(2){
+.nosotros__card:nth-of-type(2) {
     animation: cardAnimation 1s ease forwards 0.2s;
 }
-.nosotros__card:nth-of-type(3){
+.nosotros__card:nth-of-type(3) {
     animation: cardAnimation 1s ease forwards 0.4s;
 }
-.nosotros__card:nth-of-type(4){
+.nosotros__card:nth-of-type(4) {
     animation: cardAnimation 1s ease forwards 0.6s;
+}
+
+// Media queries para hacer la página responsive
+@media (max-width: 992px) {
+    main .nosotros {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+    main h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 576px) {
+    main .nosotros {
+        grid-template-columns: 1fr;
+        grid-gap: 0.5em;
+    }
+    main h1 {
+        font-size: 2em;
+    }
+    .nosotros__card {
+        padding: 0.5em;
+        p {
+            font-size: large;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 }

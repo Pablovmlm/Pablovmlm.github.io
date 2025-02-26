@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Studio</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cita.css">
+    <script src="script/loader.js" defer></script>
+    <script src="script/cita.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo/dragon.png" alt="imagen de dragon"></a>
+        </div>
+        <h2>Dragon Studio</h2>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="estudios.html">Estudios</a></li>
+                <li><a href="artistas.html">Artistas</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li class="list__bar"></li>
+                <li><a href="sesion.html">Iniciar Sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li class="list__bar"></li>
+                <li><button class="translate" id="es">Español</button></li>
+                <li><button class="translate" id="en">English</button></li>
+            </ul>
+            <button class="black__button cita-button">Pedir Cita</button>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>¡Pide cita ahora!</h1>
+        <div class="cita__container">
+            <form class="cita" method="POST">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required>
+                <span id="error__nombre"></span>
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" id="apellidos" required>
+                <span id="error__apellidos"></span>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+                    required>
+                <span id="error__email"></span>
+                <label for="telefono">Teléfono</label>
+                <input type="tel" name="telefono" id="telefono" pattern="^[0-9]{9}$" required>
+                <span id="error__telefono"></span>
+                <label for="fecha">Fecha</label>
+                <input type="date" name="fecha" id="fecha" required>
+                <span id="error__fecha"></span>
+                <label for="hora">Hora</label>
+                <input type="time" name="hora" id="hora" required>
+                <span id="error__hora"></span>
+                <input class="black__button lang" key="pedir" type="submit" value="Confirmar Cita" id="envio">
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__text">
+            <p>© Dragon Studio 2025</p>
+            <p class="lang" key="privacy">Política de Privacidad</p>
+            <p class="lang" key="cookies">Política de Cookies</p>
+        </div>
+        <div class="footer__logo">
+            <a href="#"><img src="img/footer/instagram_logo.png" alt="red social 1"></a>
+            <a href="#"><img src="img/footer/x_logo.png" alt="red social 2"></a>
+        </div>
+    </footer>
+    <script src="script/scriptJS.js"></script>
+</body>
+
+</html>

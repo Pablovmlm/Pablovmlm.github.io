@@ -1,17 +1,19 @@
 @use "_botones-cita";
 @use "_fuente";
 @use "_variables" as *;
+@use "_hamburguesa";
+@use "_mixins" as *;
+
 body {
-    font-family: $fuente-principal;
+    font-family: $fuente-secundaria;
 }
+
 //Estilos del header
 header {
-    background-color: #0f0f0f;
-    color: #fff;
+    background-color: $color-primario;
+    color: $color-secundario;
     padding: 1em 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     .logo {
         cursor: pointer;
         display: flex;
@@ -24,10 +26,12 @@ header {
         }
     }
     h2 {
+        font-family: $fuente-principal;
         visibility: hidden;
         animation: move 2s ease forwards 1s;
     }
 }
+
 //Estilos del menú de navegación
 nav {
     display: flex;
@@ -42,15 +46,98 @@ nav {
             margin: 0 1em;
             a {
                 text-decoration: none;
-                color: #fff;
+                color: $color-secundario;
             }
         }
     }
 }
+.active {
+    border: $color-secundario 2px solid;
+    padding: 2px;
+}
+
 .list__bar {
     height: 3rem;
     width: 0.1%;
-    background-color: white;
+    background-color: $color-secundario;
+}
+
+.translate {
+    border: none;
+    background-color: transparent;
+    color: $color-secundario;
+    padding: 0.5em 1em;
+    border: none;
+    font-family: $fuente-secundaria;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul.active {
+        display: flex !important;
+    }
+    nav ul li {
+        padding: 1em;
+    }
+    .list__bar {
+        display: none !important;
+    }
+    .hamburger {
+        display: flex !important;
+        margin-left: 1em;
+    }
+    nav .black__button {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul.active {
+        display: flex !important;
+    }
+    nav ul li {
+        padding: 1em;
+    }
+    .list__bar {
+        display: none !important;
+    }
+    .hamburger {
+        display: flex !important;
+        margin-left: 1em;
+    }
+    nav .black__button {
+        display: none;
+    }
+    .translate {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1em;
+    }
 }
 
 //Animación de entrada
